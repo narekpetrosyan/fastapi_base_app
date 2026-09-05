@@ -26,8 +26,15 @@ class DatabaseConfig(BaseModel):
     }
 
 
+class ApiV1PrefixConfig(BaseModel):
+    prefix: str = "/v1"
+    users: str = "/users"
+
+
 class ApiPrefixConfig(BaseModel):
     prefix: str = "/api"
+
+    v1: ApiV1PrefixConfig = ApiV1PrefixConfig()
 
 
 class Settings(BaseSettings):
